@@ -30,8 +30,7 @@ def cli(filter):
         city_column, city = filter1.split('=')
         state_column , state = filter2.split('=')## use regex group to get 
 
-        ## conditon to make only ## city and state are keyed
-        print(city_column, state_column)
+        ## conditon to make only city and state are keyed
         if city_column.lower().strip() == 'city' and state_column.lower().strip() == 'state':     
             csv_data = CsvData()
             res = csv_data.filter_city_state(str(city).strip(), str(state).strip())
