@@ -1,0 +1,56 @@
+#backup edits
+*.swp
+# Packages
+bin/
+build/
+dist/
+downloads/
+env/
+lib/
+lib64/
+parts/
+sdist/
+var/
+
+# build packages or files that shouldn't be in repo
+node_modules
+bower_components
+.sass-cache
+.tmp
+app/public/dist
+app/public/styles/*.css
+
+.project
+.pydevproject
+.vagrant
+.ropeproject
+.tmp
+.sass-cache
+.DS_Store
+.zedstate
+.idea
+.cache/
+/venv*
+*.py[cod]
+pip-log.txt
+
+# Python Packages
+*.egg
+*.egg-info/
+.eggs/
+.installed.cfg
+/.mypy_cache
+__pycache__
+develop-eggs/
+eggs/
+
+# Unit test / coverage reports
+.coverage
+tests/unit/.cache/
+.tox
+nosetests.xml
+karma-test-results.xml
+
+# vscode
+.vscode
+.env.local

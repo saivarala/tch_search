@@ -1,7 +1,7 @@
 import logging
 import csv
 from pathlib import Path
-from typing import Any,Dict, List
+from typing import Any,Dict, List, Tuple
 
 JsonDict = Dict[str, Any]
 logger = logging.getLogger(__name__)
@@ -26,14 +26,20 @@ class CsvData():
             else:
                 print(f" Path {path} doesn't exists. Please verify")
         
-    def filter_col(self, column:str, filter_value:str) -> List[Dict]:
+    def filter_by_col(self, column:str, filter_value:str) -> List[Dict]:
         """ filter the data with column and value provided"""
-        print(f"column = \"{column}\", filter_value = \"{filter_value}\"")
+
+        print("*"*88)
+        print(f" Search with \
+            column = \"{column}\", \
+            filter_value = \"{filter_value}\"")
+        print("*"*88)
         with self.csvFile:
             data = csv.DictReader(self.csvFile)
             for row in data:
                 if row[f"{column}"] == filter_value:
                     self.result.append(row)
+
         return self.result
 
     
@@ -47,8 +53,8 @@ class CsvData():
         with self.csvFile:
             data = csv.DictReader(self.csvFile)
             for row in data:
-                if row[city_col] == eval(city.title()) \
-                        and row[state_col] == eval(state.title()):
+                if row[city_col] == city \
+                        and row[state_col] == state:
                     self.result.append(row)
         
         return self.result
