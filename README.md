@@ -55,7 +55,10 @@ python search.py "type=ATM"
 python search.py "city=New York & state = NY"
 ```
 
+#### For Help
+```
+python search.py --help
+```
 
 
-
-
+## TODO add the setup.py for the installing the command on mac or windows. Instead of 'python search.py <<filter>>' user can use 'search <<filter>>'
