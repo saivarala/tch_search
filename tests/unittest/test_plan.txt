@@ -1,0 +1,5 @@
+Use the pytest framework for unittest
+
+define the fixture for the expected data and get for going the command
+use assert for matching the expected and actual results
+Test for different use case and also edge case

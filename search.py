@@ -1,6 +1,6 @@
 import click
 import json
-from csv_loader import CsvData
+from utils.csv_loader import CsvData
 
 @click.command()
 @click.argument('filter')
@@ -24,8 +24,6 @@ def cli(filter):
             click.echo(json.dumps(res))    
         else:
             click.echo(f"No results found for {column} : {filter_value}")
-        
-
     else:
         
         filter1 , filter2 = filter.split("&")
@@ -33,8 +31,8 @@ def cli(filter):
         state_column , state = filter2.split('=')## use regex group to get 
 
         ## conditon to make only ## city and state are keyed
-
-        if city_column.lower() == 'city' and state_column.lower() == 'state':     
+        print(city_column, state_column)
+        if city_column.lower().strip() == 'city' and state_column.lower().strip() == 'state':     
             csv_data = CsvData()
             res = csv_data.filter_city_state(str(city).strip(), str(state).strip())
             if len(res):
